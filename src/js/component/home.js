@@ -2,8 +2,35 @@ import React from "react";
 import "./home.css";
 
 export class Home extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+        super(props);
+        this.myRef = React.createRef();
+        this.state = {
+            songs: [
+                {
+                    title: "South Park",
+                    id: "south-park",
+                    author: "Kyle",
+                    url:
+                        "https://assets.breatheco.de/apis/sound/files/cartoons/songs/south-park.mp3"
+                },
+                {
+                    title: "Thunder Cats",
+                    id: "thundercats",
+                    author: "Moonra",
+                    url:
+                        "https://assets.breatheco.de/apis/sound/files/cartoons/songs/thundercats.mp3"
+                },
+                {
+                    title: "X-Men",
+                    id: "x-men",
+                    author: "Profesor",
+                    url:
+                        "https://assets.breatheco.de/apis/sound/files/cartoons/songs/x-men.mp3"
+                }
+            ],
+            currentSong = " "
+        };
 	}
 	render() {
 		return (
@@ -27,33 +54,13 @@ export class Home extends React.Component {
 						</form>
 					</div>
 				</nav>
-				<ol>
-					<li
-						style={{
-							borderBottomStyle: "solid",
-							borderWidth: "1px",
-							borderColor: "rgb(50, 50, 50)"
-						}}>
-						cow
-					</li>
-					<li
-						style={{
-							borderBottomStyle: "solid",
-							borderWidth: "1px",
-							borderColor: "rgb(50, 50, 50)"
-						}}>
-						pie
-					</li>
-					<li
-						style={{
-							borderBottomStyle: "solid",
-							borderWidth: "1px",
-							borderColor: "rgb(50, 50, 50)"
-						}}>
-						pot
-					</li>
-				</ol>
+                <div className="songs">
+                    <ol> 
+                        {this.state.songs}
+                    </ol>
+                </div>
 			</div>
 		);
 	}
 }
+
