@@ -1,19 +1,11 @@
 import React from "react";
 import "./home.css";
+import { Song } from "./songs.js";
 
-export class Home extends React.Component {
-	constructor() {
-        super();
-        this.state = {
-            
-        };
-	}
-	render() {
-		return (
-			<div classNameName="container">
-				
-			</div>
-		);
-	}
+export function Home() {
+	return (
+		<div>
+			<Song />
+		</div>
+	);
 }
-
