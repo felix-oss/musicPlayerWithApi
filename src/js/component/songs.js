@@ -152,41 +152,46 @@ export class Song extends React.Component {
 						</ol>
 					</div>
 				</div>
-				<div className="fixed-bottom controls d-flex justify-content-center">
-					<span>
-						<a
-							onClick={() =>
-								this.playSong(this.state.currentSong - 1)
-							}>
-							<i className="fas fa-step-backward" />
-						</a>
+				<div className="fixed-bottom controls">
+					<span className="d-flex justify-content-start">
+						{this.state.currentSong}
 					</span>
-					<span ref={el => (this.playButton = el)}>
-						<a
-							onClick={() =>
-								this.playSong(this.state.currentSong)
-							}>
-							<i className="far fa-play-circle" />
-						</a>
-					</span>
-					<span
-						style={{ display: "none" }}
-						ref={el => (this.pauseButton = el)}>
-						<a
-							onClick={() =>
-								this.pauseSong(this.state.currentSong)
-							}>
-							<i className="far fa-pause-circle" />
-						</a>
-					</span>
-					<span>
-						<a
-							onClick={() =>
-								this.playSong(this.state.currentSong + 1)
-							}>
-							<i className="fas fa-step-forward" />
-						</a>
-					</span>
+					<div className="d-flex justify-content-center">
+						<span>
+							<a
+								onClick={() =>
+									this.playSong(this.state.currentSong - 1)
+								}>
+								<i className="fas fa-step-backward" />
+							</a>
+						</span>
+						<span ref={el => (this.playButton = el)}>
+							<a
+								onClick={() =>
+									this.playSong(this.state.currentSong)
+								}>
+								<i className="far fa-play-circle" />
+							</a>
+						</span>
+						<span
+							style={{ display: "none" }}
+							ref={el => (this.pauseButton = el)}>
+							<a
+								onClick={() =>
+									this.pauseSong(this.state.currentSong)
+								}>
+								<i className="far fa-pause-circle" />
+							</a>
+						</span>
+						<span>
+							<a
+								onClick={() =>
+									this.playSong(this.state.currentSong + 1)
+								}>
+								<i className="fas fa-step-forward" />
+							</a>
+						</span>
+					</div>
 					<audio
 						src={this.state.songs[0].url}
 						ref={el => (this.player = el)}
